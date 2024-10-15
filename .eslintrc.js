@@ -5,8 +5,6 @@ module.exports = {
   plugins: ["@typescript-eslint"],
   extends: ["eslint:recommended", "next/core-web-vitals", "prettier"],
   rules: {
-    'no-unused-vars': 'off',
-  '@typescript-eslint/no-unused-vars': 'error',
     "import/order": [
       "error",
       {
@@ -23,7 +21,6 @@ module.exports = {
         alphabetize: {
           order: "asc",
           caseInsensitive: true,
-
           
         },
       },
@@ -46,5 +43,5 @@ module.exports = {
       ],
     },
   ],
-}
+};
 
