@@ -5,7 +5,7 @@ import {
   SignedIn,
   SignedOut,
   UserButton,
-  auth,
+  //auth,
 } from "@clerk/nextjs";
 import { Loader } from "lucide-react";
 import Image from "next/image";
@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 
 
 export const Header = () => {
-  const { userId } = auth();
+  //const { userId } = auth();
 
   return (
     <header className="h-20 w-full border-b-2 border-slate-200 px-4">
