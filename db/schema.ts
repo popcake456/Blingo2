@@ -24,8 +24,8 @@ export const coursesRelations = relations(courses, ({ many }) => ({
 
 export const units = pgTable("units", {
   id: serial("id").primaryKey(),
-  title: text("title").notNull(), // Unit 1
-  description: text("description").notNull(), // Learn the basics of spanish
+  title: text("title").notNull(), 
+  description: text("description").notNull(), 
   courseId: integer("course_id")
     .references(() => courses.id, {
       onDelete: "cascade",
@@ -154,3 +154,18 @@ export const userSubscription = pgTable("user_subscription", {
   stripePriceId: text("stripe_price_id").notNull(),
   stripeCurrentPeriodEnd: timestamp("stripe_current_period_end").notNull(),
 });
+
+export const DictionaryTittle = pgTable("DictionaryTittle",{
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(), 
+});
+
+export const dictionary = pgTable("Dictionary", {
+  id: serial("id").primaryKey(), 
+  titleId: integer("titleID") .references(() => DictionaryTittle.id, {onDelete:"cascade"}).notNull(),
+  title: text("description").notNull(), 
+  order: integer ("order") .notNull(),
+});
+
+
+
