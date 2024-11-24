@@ -155,17 +155,4 @@ export const userSubscription = pgTable("user_subscription", {
   stripeCurrentPeriodEnd: timestamp("stripe_current_period_end").notNull(),
 });
 
-export const DictionaryTittle = pgTable("DictionaryTittle",{
-  id: serial("id").primaryKey(),
-  title: text("title").notNull(), 
-});
-
-export const dictionary = pgTable("Dictionary", {
-  id: serial("id").primaryKey(), 
-  titleId: integer("titleID") .references(() => DictionaryTittle.id, {onDelete:"cascade"}).notNull(),
-  title: text("description").notNull(), 
-  order: integer ("order") .notNull(),
-});
-
-
 

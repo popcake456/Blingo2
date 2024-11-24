@@ -7,13 +7,12 @@ import db from "./drizzle";
 import {
   challengeProgress,
   courses,
-  dictionary,
-  DictionaryTittle,
   lessons,
   units,
   userProgress,
   userSubscription,
 } from "./schema";
+
 
 const DAY_IN_MS = 86_400_000;
 
@@ -246,12 +245,3 @@ export const getTopTenUsers = cache(async () => {
 
   return data;
 });
-
-
-export const getDictionary = cache (async () => {
-  const data = await db.query.DictionaryTittle.findMany();
-
-  return data;
-});
-
-
