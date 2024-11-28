@@ -30,7 +30,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </Link>
 
       <div className="flex flex-1 flex-col gap-y-2">
-        <SidebarItem label="Matuto" 
+        <SidebarItem label="Learn" 
         href="/learn" 
         iconSrc="/learn.svg" />
         <SidebarItem
@@ -39,17 +39,17 @@ export const Sidebar = ({ className }: SidebarProps) => {
           iconSrc="/leaderboard.svg"
         />
         <SidebarItem 
-          label="Paghanap" 
+          label="Quests" 
           href="/quests" 
           iconSrc="/quests.svg" 
           />
         <SidebarItem 
-          label="Tindahan" 
+          label="Shop" 
           href="/shop" 
           iconSrc="/shop.svg" 
           />
         <SidebarItem 
-          label="Talahulugan" 
+          label="Dictionary" 
           href="/dictionary-titles" 
           iconSrc="/dictionary_icon2.svg" 
           />
