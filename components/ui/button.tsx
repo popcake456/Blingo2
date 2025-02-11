@@ -15,14 +15,14 @@ const buttonVariants = cva(
 
        
         locked:
-          "bg-neutral-200 text-primary-foreground hover:bg-neutral-200/90 border-neutral-400 border-b-4 active:border-b-0",
+          "bg-neutral-600 text-primary-foreground hover:bg-neutral-600/90 border-neutral-800 border-b-4 active:border-b-0",
 
         primary:
           "bg-sky-400 text-primary-foreground hover:bg-sky-400/90 border-sky-500 border-b-4 active:border-b-0",
         primaryOutline: "bg-white text-sky-500 hover:bg-slate-100",
 
         secondary:
-          "bg-orange-200 text-primary-foreground hover:bg-orange-200/90 border-orange-300 border-b-4 active:border-b-0",
+          "bg-[#cec9c1] text-primary-foreground hover:bg-[#c2bdb5] border-[#a4a099] border-b-4 active:border-b-0",
         secondaryOutline: "bg-white text-green-500 hover:bg-slate-100",
 
         danger:

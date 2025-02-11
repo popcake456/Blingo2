@@ -12,13 +12,13 @@ export const Footer = () => {
 
         <Button size="lg" variant="ghost" className="w-full cursor-default">
           <Image
-            src="/null"
-            alt="ibaloi"
+            src="/ipmrBaguio.svg"
+            alt="ipmr"
             height={32}
             width={40}
             className="mr-4 rounded-md"
           />
-          Ibaloi
+          IPMR Baguio
         </Button>
 
         

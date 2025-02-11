@@ -834,9 +834,11 @@ export default function DictionaryPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Filter entries based on search query
-  const filteredEntries = dictionaryEntries.filter((entry) =>
-    entry.title.toLowerCase().includes(searchQuery.toLowerCase())
+  // Filter entries based on search query (checks both title and description)
+  const filteredEntries = dictionaryEntries.filter(
+    (entry) =>
+      entry.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      entry.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   // Get entries for the current page
@@ -853,7 +855,7 @@ export default function DictionaryPage() {
 
   // Create page number range to display
   const pageNumberRange = () => {
-    const range: number[] = [];
+    const range = [];
     const start = Math.max(1, currentPage - 2); // Start 2 pages before current
     const end = Math.min(totalPages, currentPage + 2); // End 2 pages after current
 

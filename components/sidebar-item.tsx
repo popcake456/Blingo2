@@ -19,10 +19,10 @@ export const SidebarItem = ({ label, iconSrc, href }: SidebarItemProps) => {
   return (
     <Button
       variant={isActive ? "sidebarOutline" : "sidebar"}
-      className="h-[52px] justify-start"
+      className="h-[52px] justify-start text-white bg-[#213741] hover:bg-[#cec9c1] hover:text-black transition-colors"
       asChild
     >
-      <Link href={href}>
+      <Link href={href} className="flex items-center w-full">
         <Image
           src={iconSrc}
           alt={label}
@@ -30,7 +30,7 @@ export const SidebarItem = ({ label, iconSrc, href }: SidebarItemProps) => {
           height={32}
           width={32}
         />
-        {label}
+        <span>{label}</span>
       </Link>
     </Button>
   );
