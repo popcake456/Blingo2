@@ -867,10 +867,10 @@ export default function DictionaryPage() {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-6 bg-[#213741] min-h-screen">
       {/* Header with title and search bar */}
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-xl font-bold">Dictionary</h1>
+        <h1 className="text-xl font-bold text-white">Dictionary</h1>
         <input
           type="text"
           placeholder="Search..."
@@ -879,7 +879,7 @@ export default function DictionaryPage() {
             setSearchQuery(e.target.value);
             setCurrentPage(1); // Reset to first page when search changes
           }}
-          className="border border-gray-300 rounded-lg px-4 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="border border-gray-300 bg-[#2a3b47] text-white rounded-lg px-4 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
 
@@ -887,13 +887,13 @@ export default function DictionaryPage() {
       <ul className="space-y-4">
         {currentEntries.map((entry) => (
           <li key={entry.id} className="flex flex-col">
-            <div className="flex w-full items-center gap-x-4 border-t-2 p-4 pt-8">
-              <Button variant="primary" size="sm">
+            <div className="flex w-full items-center gap-x-4 border-t-2 p-4 pt-8 border-gray-500">
+              <Button variant="primary" size="sm" className="text-white">
                 {entry.title}
               </Button>
             </div>
             {/* Always display description */}
-            <p className="mt-2 text-gray-700">{entry.description}</p>
+            <p className="mt-2 text-gray-300">{entry.description}</p>
           </li>
         ))}
       </ul>
@@ -905,6 +905,7 @@ export default function DictionaryPage() {
           size="sm"
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
+          className="text-white"
         >
           {"<<"}
         </Button>
@@ -915,6 +916,7 @@ export default function DictionaryPage() {
             variant={currentPage === page ? "primary" : "ghost"}
             size="sm"
             onClick={() => handlePageChange(page)}
+            className={currentPage === page ? "text-white" : "text-gray-400"}
           >
             {page}
           </Button>
@@ -925,6 +927,7 @@ export default function DictionaryPage() {
           size="sm"
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
+          className="text-white"
         >
           {">>"}
         </Button>
