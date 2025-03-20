@@ -39,7 +39,7 @@ export const ExitModal = () => {
           </div>
 
           <DialogTitle className="text-center text-2xl font-bold">
-          Wait, Don't Leave
+          Wait, Dont Leave
           </DialogTitle>
 
           <DialogDescription className="text-center text-base">
