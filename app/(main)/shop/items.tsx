@@ -45,11 +45,11 @@ export const Items = ({
   return (
     <ul className="w-full">
       <div className="flex w-full items-center gap-x-4 border-t-2 p-4">
-        <Image src="/heart.svg" alt="Heart" height={60} width={60} />
+        <Image src="/Shieldsvg.svg" alt="Shield" height={60} width={60} />
 
         <div className="flex-1">
           <p className="text-base font-bold text-neutral-100 lg:text-xl">
-            Refill hearts
+            Refill shields
           </p>
         </div>
 
@@ -75,11 +75,11 @@ export const Items = ({
       </div>
 
       <div className="flex w-full items-center gap-x-4 border-t-2 p-4 pt-8">
-        <Image src="/unlimited.svg" alt="Unlimited" height={60} width={60} />
+        <Image src="/primiumshield.svg" alt="Primium" height={60} width={60} />
 
         <div className="flex-1">
           <p className="text-base font-bold text-neutral-100 lg:text-xl">
-            Unlimited hearts
+            Unlimited Shields
           </p>
         </div>
 

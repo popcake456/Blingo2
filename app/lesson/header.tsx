@@ -26,12 +26,12 @@ export const Header = ({
 
       <Progress value={percentage} />
 
-      <div className="flex items-center font-bold text-rose-500">
+      <div className="flex items-center font-bold text-green-500">
         <Image
-          src="/heart.svg"
+          src="/Shieldsvg.svg"
           height={28}
           width={28}
-          alt="Heart"
+          alt="Shield"
           className="mr-2"
         />
         {hasActiveSubscription ? (

@@ -39,11 +39,11 @@ export const ExitModal = () => {
           </div>
 
           <DialogTitle className="text-center text-2xl font-bold">
-            Teka,Wag Kang Umalis
+          Wait, Don't Leave
           </DialogTitle>
 
           <DialogDescription className="text-center text-base">
-            Aalis ka sa Aralin na ito, Sigurado ka ba?
+          You are leaving this Lesson, are you sure?
           </DialogDescription>
         </DialogHeader>
 
@@ -55,7 +55,8 @@ export const ExitModal = () => {
               size="lg"
               onClick={close}
             >
-              Pagpatuloy Matuto
+             
+            Continue Learning
             </Button>
 
             <Button
@@ -67,7 +68,7 @@ export const ExitModal = () => {
                 router.push("/learn");
               }}
             >
-              Tapusin ang session
+              End the session
             </Button>
           </div>
         </DialogFooter>
