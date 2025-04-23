@@ -36,13 +36,13 @@ const QuestsPage = async () => {
 
       <FeedWrapper>
         <div className="flex w-full flex-col items-center">
-          <Image src="/quests.svg" alt="Quests" height={90} width={90} />
+          <Image src="/moneybag.svg" alt="Quests" height={90} width={90} />
 
           <h1 className="my-6 text-center text-2xl font-bold text-neutral-100">
-            Quests
+          Blingo Bucks Earnings
           </h1>
           <p className="mb-6 text-center text-lg text-muted-foreground">
-          Complete quests by earning points.
+          This only shows how much Blingo Bucks you have.
           </p>
 
           <ul className="w-full">
