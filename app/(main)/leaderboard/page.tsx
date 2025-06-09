@@ -2,8 +2,6 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 
 import { FeedWrapper } from "@/components/feed-wrapper";
-import { Promo } from "@/components/promo";
-import { Quests } from "@/components/quests";
 import { StickyWrapper } from "@/components/sticky-wrapper";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
@@ -38,8 +36,7 @@ const LeaderboardPage = async () => {
           points={userProgress.points}
           hasActiveSubscription={isPro}
         />
-        {!isPro && <Promo />}
-        <Quests points={userProgress.points} />
+        
       </StickyWrapper>
 
       <FeedWrapper>
@@ -76,7 +73,7 @@ const LeaderboardPage = async () => {
               <p className="flex-1 font-bold text-neutral-100">
                 {userProgress.userName}
               </p>
-              <p className="text-neutral-100">{userProgress.points} XP</p>
+              <p className="text-neutral-100">{userProgress.points} BBs</p>
             </div>
           ))}
         </div>

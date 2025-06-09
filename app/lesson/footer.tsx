@@ -61,7 +61,7 @@ export const Footer = ({
           size={isMobile ? "sm" : "lg"}
           variant={status === "wrong" ? "danger" : "secondary"}
         >
-          {status === "none" && "Check"}
+          {status === "none" && "Assess"}
           {status === "correct" && "Next"}
           {status === "wrong" && "Retry"}
           {status === "completed" && "Continue"}

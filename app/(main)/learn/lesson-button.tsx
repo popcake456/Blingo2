@@ -2,12 +2,9 @@
 
 import { BadgeCheck, Trophy, Mountain } from "lucide-react";
 import Link from "next/link";
-import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-import "react-circular-progressbar/dist/styles.css";
 
 type LessonButtonProps = {
   id: number;
@@ -26,13 +23,11 @@ export const LessonButton = ({
   current,
   percentage,
 }: LessonButtonProps) => {
- 
   const isFirst = index === 0;
   const isLast = index === totalCount;
   const isCompleted = !current && !locked;
 
   const Icon = isCompleted ? BadgeCheck : isLast ? Trophy : Mountain;
-
   const href = isCompleted ? `/lesson/${id}` : "/lesson";
 
   return (
@@ -44,64 +39,48 @@ export const LessonButton = ({
       <div
         className="relative"
         style={{
-         
           marginTop: isFirst && !isCompleted ? 60 : 24,
         }}
       >
-        {current ? (
-          <div className="relative h-[102px] w-[102px]">
+        <div className="relative h-[102px] w-[102px] flex flex-col items-center justify-center">
+          {current && (
             <div className="absolute -top-6 left-2.5 z-10 animate-bounce rounded-xl border-2 bg-white px-3 py-2.5 font-bold uppercase tracking-wide text-[#213741]">
               Start
               <div
-                className="absolute -bottom-2 left-1/2 h-0 w-0 -translate-x-1/2 transform border-x-8 border-t-8 border-x-transparent"
+                className="absolute -bottom-2 left-1/2 h-0 w-0 -translate-x-1/2 transform border-x-8 border-t-8 border-x-transparent border-t-white"
                 aria-hidden
               />
             </div>
-            <CircularProgressbarWithChildren
-              value={Number.isNaN(percentage) ? 0 : percentage}
-              styles={{
-                path: {
-                  stroke: "#4ade80",
-                },
-                trail: {
-                  stroke: "#e5e7eb",
-                },
-              }}
-            >
-              <Button
-                size="rounded"
-                variant={locked ? "locked" : "secondary"}
-                className="h-[70px] w-[70px] border-b-8"
-              >
-                <Icon
-                  className={cn(
-                    "h-10 w-10",
-                    locked
-                      ? "fill-neutral-400 stroke-neutral-400 text-neutral-400"
-                      : "fill-primary-foreground text-primary-foreground",
-                    isCompleted && "fill-none stroke-[4]"
-                  )}
-                />
-              </Button>
-            </CircularProgressbarWithChildren>
-          </div>
-        ) : (
-          <Button
-            size="rounded"
-            variant={locked ? "locked" : "secondary"}
-            className="h-[70px] w-[70px] border-b-8"
-          >
-            <Icon
-              className={cn(
-                "h-10 w-10",
-                locked
-                  ? "fill-neutral-400 stroke-neutral-400 text-neutral-400"
-                  : "fill-primary-foreground text-primary-foreground",
-                isCompleted && "fill-none stroke-[4]"
-              )}
-            />
-          </Button>
-        )}
+          )}
+
+<Button
+  variant={locked ? "locked" : "secondary"}
+  className={cn(
+    "h-[70px] w-[70px] shadow-md transition hover:shadow-lg",
+    locked ? "bg-gray-300" : "bg-white text-gray-900",
+    "rounded-xl border border-gray-300"
+  )}
+>
+  <Icon
+    className={cn(
+      "h-8 w-8",
+      locked
+        ? "text-gray-400"
+        : "text-green-600",
+      isCompleted && "stroke-[2]"
+    )}
+  />
+</Button>
+
+          {current && (
+  <div className="mt-2 w-[480px] h-2 bg-gray-200 rounded overflow-hidden">
+    <div
+      className="h-full bg-green-400 transition-all duration-300"
+      style={{ width: `${Math.min(percentage, 100)}%` }}
+    />
+  </div>
+)}
+        </div>
       </div>
     </Link>
   );
